@@ -1,3 +1,5 @@
+@use '@sass/abstracts/colors';
+
 :root {
   font-size: 62.5%;
 }
@@ -5,4 +7,69 @@
 body {
   font-size: 1.6rem;
   font-family: 'Roboto', sans-serif;
+}
+
+.heading-M {
+  font-family: 'Roboto';
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.heading-S {
+  font-family: 'Roboto';
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.body-S {
+  font-family: 'Roboto';
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.preview {
+  font-family: 'Roboto Slab';
+
+  &.preview-H1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+  }
+
+  &.preview-H2 {
+    font-size: 2.8rem;
+    font-weight: 300;
+  }
+
+  &.preview-H3 {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  &.preview-H4 {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  &.preview-H5 {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  &.preview-H6 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: colors.$orange;
+  }
+
+  &.preview-p {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+}
+
+.markdown-code {
+  font-family: 'Roboto Mono';
+  font-size: 14px;
+  font-weight: 400;
 }
