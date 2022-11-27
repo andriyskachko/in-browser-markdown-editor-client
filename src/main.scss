@@ -1,8 +1,8 @@
-@use '@/assets/sass/base/reset';
-@use '@/assets/sass/base/typography';
+@use '@sass/base/reset';
+@use '@sass/base/typography';
+@use '@sass/abstracts/mixins';
 
-:root {
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+body {
+  @include mixins.theme-aware('background', 'bgColor');
+  @include mixins.theme-aware('color', 'color');
 }

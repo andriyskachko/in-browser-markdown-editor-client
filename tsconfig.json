@@ -17,7 +17,8 @@
     "jsx": "react-jsx",
     "types": ["node"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@sass/*": ["./src/assets/sass/*"]
     }
   },
   "include": ["src", "**/*.ts", "**/*.tsx"],

@@ -1,0 +1,12 @@
+@use '@sass/abstracts/colors';
+
+$themes: (
+  light: (
+    bgColor: colors.$clr-100,
+    color: colors.$clr-700
+  ),
+  dark: (
+    bgColor: colors.$clr-1000,
+    color: colors.$clr-400
+  )
+);
