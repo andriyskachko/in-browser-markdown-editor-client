@@ -1,0 +1,8 @@
+@use '@/assets/sass/base/reset';
+@use '@/assets/sass/base/typography';
+
+:root {
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
