@@ -1,4 +1,4 @@
-@use '@sass/themes/themes';
+@use '@sass/themes/color-palette';
 
 /**
  * theme-aware - Change color of a css property based on the currently active theme
@@ -8,9 +8,9 @@
  *
  */
 @mixin theme-aware($key, $color) {
-  @each $theme-name, $theme-color in themes.$themes {
-    .theme-#{$theme-name} & {
-      #{$key}: map-get(map-get(themes.$themes, $theme-name), $color);
+  @each $theme-name, $theme-color in color-palette.$themes {
+    &.theme-#{$theme-name} {
+      #{$key}: map-get(map-get(color-palette.$themes, $theme-name), $color);
     }
   }
 }

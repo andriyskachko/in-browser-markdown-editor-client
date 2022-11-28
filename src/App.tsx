@@ -1,5 +1,6 @@
 import { useTheme } from '@/hooks/useTheme'
 import ThemeToggler from '@/components/ThemeToggler'
+import '@sass/components/App.scss'
 
 function App() {
   const { theme } = useTheme()

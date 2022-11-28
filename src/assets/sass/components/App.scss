@@ -1,0 +1,7 @@
+@use '@sass/abstracts/mixins';
+
+.App {
+  @include mixins.theme-aware('background', 'bgColor');
+  @include mixins.theme-aware('color', 'color');
+  min-height: 100vh;
+}

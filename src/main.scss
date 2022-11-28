@@ -1,8 +1,2 @@
 @use '@sass/base/reset';
 @use '@sass/base/typography';
-@use '@sass/abstracts/mixins';
-
-body {
-  @include mixins.theme-aware('background', 'bgColor');
-  @include mixins.theme-aware('color', 'color');
-}
