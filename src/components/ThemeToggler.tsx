@@ -1,16 +1,9 @@
-import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useTheme } from '@/hooks/useTheme'
 import '@sass/components/ThemeToggler.scss'
 
-type TTheme = 'light' | 'dark'
-
 function ThemeToggler() {
-  const [theme, setTheme] = useState<TTheme>('dark')
-
-  const handleChangeTheme = () => {
-    const newTheme: TTheme = theme === 'dark' ? 'light' : 'dark'
-    setTheme(newTheme)
-  }
+  const { theme, handleToggleTheme } = useTheme()
 
   return (
     <div className="ThemeToggler">
@@ -21,9 +14,10 @@ function ThemeToggler() {
       />
       <label className="toggler">
         <input
+          name="theme"
           type="checkbox"
           className="hidden"
-          onChange={() => handleChangeTheme()}
+          onChange={() => handleToggleTheme()}
         />
         <span className="slider round" />
       </label>
