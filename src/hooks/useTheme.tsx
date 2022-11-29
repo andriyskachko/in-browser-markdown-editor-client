@@ -1,10 +1,18 @@
-import { useContext } from 'react'
-import { ThemeContext } from '@/context/ThemeContext'
-import { IThemeProvider } from '@/context/ThemeContext'
+import { useState } from 'react'
 
-const useTheme = (): IThemeProvider => {
-  const { theme, handleToggleTheme } = useContext(ThemeContext)
-  return { theme, handleToggleTheme }
+type TTheme = 'light' | 'dark'
+type TThemeToggleHandler = () => void
+
+const useTheme = (): [TTheme, TThemeToggleHandler] => {
+  const [theme, setTheme] = useState<TTheme>('dark')
+
+  const handleToggleTheme = () => {
+    const newTheme: TTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(newTheme)
+  }
+
+  return [theme, handleToggleTheme]
 }
 
-export { useTheme }
+export default useTheme
+export type { TTheme, TThemeToggleHandler }

@@ -1,21 +1,19 @@
-import React, { createContext, useState } from 'react'
-
-type TTheme = 'light' | 'dark'
+import React, { createContext } from 'react'
+import useTheme, { TTheme, TThemeToggleHandler } from '@/hooks/useTheme'
 
 interface IThemeProvider {
   theme: TTheme
-  handleToggleTheme: () => void
+  handleToggleTheme: TThemeToggleHandler
+}
+
+interface IThemeContextProviderProps {
+  children?: React.ReactNode
 }
 
 const ThemeContext = createContext<IThemeProvider>({} as IThemeProvider)
 
-function ThemeContextProvider({ children }: { children?: React.ReactNode }) {
-  const [theme, setTheme] = useState<TTheme>('dark')
-
-  const handleToggleTheme = () => {
-    const newTheme: TTheme = theme === 'dark' ? 'light' : 'dark'
-    setTheme(newTheme)
-  }
+function ThemeContextProvider({ children }: IThemeContextProviderProps) {
+  const [theme, handleToggleTheme] = useTheme()
 
   return (
     <ThemeContext.Provider value={{ theme, handleToggleTheme }}>
@@ -26,4 +24,3 @@ function ThemeContextProvider({ children }: { children?: React.ReactNode }) {
 
 export default ThemeContextProvider
 export { ThemeContext }
-export type { TTheme, IThemeProvider }

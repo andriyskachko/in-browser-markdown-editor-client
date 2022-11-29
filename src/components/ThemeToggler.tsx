@@ -1,9 +1,9 @@
+import useThemeContext from '@/hooks/useThemeContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useTheme } from '@/hooks/useTheme'
 import '@sass/components/ThemeToggler.scss'
 
 function ThemeToggler() {
-  const { theme, handleToggleTheme } = useTheme()
+  const [theme, handleToggleTheme] = useThemeContext()
 
   return (
     <div className="ThemeToggler">
@@ -12,11 +12,12 @@ function ThemeToggler() {
         color="white"
         className={theme === 'dark' ? 'theme-icon selected' : 'theme-icon'}
       />
-      <label className="toggler">
+      <label className="toggler" tabIndex={0} aria-label="Change the theme">
         <input
-          name="theme"
           type="checkbox"
           className="hidden"
+          aria-hidden
+          checked={theme === 'light'}
           onChange={() => handleToggleTheme()}
         />
         <span className="slider round" />
