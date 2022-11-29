@@ -9,6 +9,14 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andriyskachko/in-browser-markdown-editor-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andriyskachko/in-browser-markdown-editor-client/issues"
+  },
+  "homepage": "https://github.com/andriyskachko/in-browser-markdown-editor#readme",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
