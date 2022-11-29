@@ -1,7 +1,8 @@
 {
-  "name": "client",
+  "name": "in-browser-markdown-editor-client",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "@andriyskachko",
   "type": "module",
   "scripts": {
     "dev": "vite",
