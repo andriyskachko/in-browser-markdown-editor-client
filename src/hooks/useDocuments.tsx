@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import { useError } from './useError'
 import IDocument from '@/shared/IDocument'
 
-const useDocuments = (): [IDocument[], Error] => {
+const useDocuments = (): [IDocument[], Error, boolean] => {
   const [documents, setDocuments] = useState<IDocument[]>([])
+  const [isLoading, setIsLoading] = useState(true)
   const [page, setPage] = useState(1)
   const [error, handleCatchError] = useError()
 
@@ -21,6 +22,8 @@ const useDocuments = (): [IDocument[], Error] => {
         }
       }
 
+      setIsLoading(false)
+
       return () => {
         console.log('Removed')
       }
@@ -29,7 +32,7 @@ const useDocuments = (): [IDocument[], Error] => {
     fetchDocuments()
   }, [page])
 
-  return [documents, error]
+  return [documents, error, isLoading]
 }
 
 export default useDocuments
