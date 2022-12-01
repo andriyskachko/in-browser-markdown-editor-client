@@ -1,13 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useError } from './useError'
-
-interface IDocument {
-  _id?: string
-  name: string
-  body: string
-  createdAt: string
-  updatedAt: string
-}
+import IDocument from '@/shared/IDocument'
 
 const useDocuments = (): [IDocument[], Error] => {
   const [documents, setDocuments] = useState<IDocument[]>([])
@@ -26,6 +19,10 @@ const useDocuments = (): [IDocument[], Error] => {
         if (error instanceof Error) {
           handleCatchError(error)
         }
+      }
+
+      return () => {
+        console.log('Removed')
       }
     }
 

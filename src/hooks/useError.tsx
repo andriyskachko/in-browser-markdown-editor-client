@@ -7,6 +7,7 @@ function useError(): [Error, TErrorHandler] {
 
   const handleCatchError = (err: Error) => {
     setError(err)
+    console.log(err.message)
   }
 
   return [error, handleCatchError]
