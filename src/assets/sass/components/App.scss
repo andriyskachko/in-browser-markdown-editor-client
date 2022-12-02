@@ -2,8 +2,15 @@
 @use '@sass/abstracts/variables' as vars;
 
 .App {
-  @include mixins.theme-aware('background', 'bgColor');
+  @include mixins.theme-aware('background', 'background-color');
   @include mixins.theme-aware('color', 'color');
+  @include mixins.theme-colors-utility(
+    'clr-preview-heading',
+    'preview-heading'
+  );
+  @include mixins.theme-colors-utility('clr-preview-body', 'preview-body');
+  @include mixins.theme-colors-utility('clr-heading', 'heading');
+  @include mixins.theme-colors-utility('clr-heading-body', 'heading-body');
   min-height: 100vh;
   transition: background-color vars.$elements-transition-time;
 }
