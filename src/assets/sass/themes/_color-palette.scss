@@ -2,11 +2,19 @@
 
 $themes: (
   light: (
-    bgColor: colors.$clr-100,
-    color: colors.$clr-700
+    'background-color': colors.$clr-100,
+    'color': colors.$clr-700,
+    'preview-heading': colors.$clr-700,
+    'preview-body': colors.$clr-500,
+    'heading': colors.$clr-100,
+    'heading-body': colors.$clr-500
   ),
   dark: (
-    bgColor: colors.$clr-1000,
-    color: colors.$clr-400
+    'background-color': colors.$clr-1000,
+    'color': colors.$clr-400,
+    'preview-heading-color': colors.$clr-100,
+    'preview-body': colors.$clr-400,
+    'heading': colors.$clr-100,
+    'heading-body': colors.$clr-500
   )
 );

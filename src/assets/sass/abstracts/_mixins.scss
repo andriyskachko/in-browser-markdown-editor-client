@@ -14,3 +14,13 @@
     }
   }
 }
+
+@mixin theme-colors-utility($utilityClassName, $color) {
+  @each $theme-name, $theme-color in color-palette.$themes {
+    &.theme-#{$theme-name} {
+      .#{$utilityClassName} {
+        color: map-get(map-get(color-palette.$themes, $theme-name), $color);
+      }
+    }
+  }
+}

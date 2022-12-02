@@ -9,26 +9,26 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.heading-M {
+.text-heading-M {
   font-family: 'Roboto';
   font-size: 1.5rem;
   font-weight: 400;
 }
 
-.heading-S {
+.text-heading-S {
   font-family: 'Roboto';
   font-size: 1.4rem;
   font-weight: 500;
   letter-spacing: 2px;
 }
 
-.body-S {
+.text-body-S {
   font-family: 'Roboto';
   font-size: 1.3rem;
   font-weight: 300;
 }
 
-.preview {
+.text-preview {
   font-family: 'Roboto Slab';
 
   &.preview-H1 {
@@ -68,7 +68,7 @@ body {
   }
 }
 
-.markdown-code {
+.text-markdown-code {
   font-family: 'Roboto Mono';
   font-size: 14px;
   font-weight: 400;
