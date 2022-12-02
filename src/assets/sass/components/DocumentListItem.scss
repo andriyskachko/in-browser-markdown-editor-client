@@ -1,0 +1,26 @@
+@use '@sass/abstracts/colors';
+@use '@sass/abstracts/variables' as var;
+
+.DocumentListItem {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  margin-bottom: 2.6rem;
+  cursor: pointer;
+  &:focus {
+    outline: var.$elements-outline solid colors.$clr-blue;
+    outline-offset: var.$elements-outline;
+  }
+}
+
+.DocumentListItem__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.DocumentListItem__name {
+  width: var.$document-name-width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
