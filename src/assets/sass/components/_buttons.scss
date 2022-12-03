@@ -1,0 +1,22 @@
+@use '@sass/abstracts/colors';
+@use '@sass/base/typography';
+
+.button--primary {
+  @extend .text-heading-M;
+  background-color: colors.$clr-orange;
+  color: colors.$clr-100;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: colors.$clr-orange-hover;
+  }
+
+  &:focus {
+    outline: 2px solid colors.$clr-blue;
+    outline-offset: 2px;
+  }
+}
