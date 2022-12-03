@@ -11,6 +11,6 @@
   @include mixins.theme-colors-utility('clr-preview-body', 'preview-body');
   @include mixins.theme-colors-utility('clr-heading', 'heading');
   @include mixins.theme-colors-utility('clr-heading-body', 'heading-body');
-  min-height: 100vh;
+  height: 100vh;
   transition: background-color vars.$elements-transition-time;
 }
