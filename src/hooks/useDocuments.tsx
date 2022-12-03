@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useError } from './useError'
+import axios from 'axios'
 import IDocument from '@/shared/IDocument'
 
 const useDocuments = (): [IDocument[], Error, boolean] => {
@@ -11,11 +12,11 @@ const useDocuments = (): [IDocument[], Error, boolean] => {
   useEffect(() => {
     async function fetchDocuments() {
       try {
-        const response = await fetch(
+        const response = await axios.get<IDocument[]>(
           `http://localhost:3000/markdown?page=${page}`
         )
-        const newDocuments = (await response.json()) as IDocument[]
-        setDocuments(documents.concat(newDocuments))
+        const { data } = response
+        setDocuments(documents.concat(data))
       } catch (error) {
         if (error instanceof Error) {
           handleCatchError(error)
