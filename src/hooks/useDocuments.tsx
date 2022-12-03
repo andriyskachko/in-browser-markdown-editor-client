@@ -3,7 +3,7 @@ import { useError } from './useError'
 import axios from 'axios'
 import IDocument from '@/shared/IDocument'
 
-const useDocuments = (): [IDocument[], Error, boolean] => {
+const useDocuments = (): [IDocument[], Error | undefined, boolean] => {
   const [documents, setDocuments] = useState<IDocument[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [page, setPage] = useState(1)

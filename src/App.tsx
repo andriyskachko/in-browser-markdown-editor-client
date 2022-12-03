@@ -1,22 +1,19 @@
 import useThemeContext from '@/hooks/useThemeContext'
-import useDocuments from '@/hooks/useDocuments'
-import ThemeToggler from '@/components/ThemeToggler'
-import DocumentsList from './components/DocumentsList'
+import DocumentContextProvider from '@/context/DocumentContext'
 import '@sass/components/App.scss'
+import Sidebar from './components/Sidebar'
+import { useState } from 'react'
 
 function App() {
   const [theme] = useThemeContext()
-  const [documents, error, isLoading] = useDocuments()
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className={`App theme-${theme}`}>
-      <ThemeToggler />
-      <DocumentsList
-        documents={documents}
-        error={error}
-        isLoading={isLoading}
-      ></DocumentsList>
-    </div>
+    <DocumentContextProvider>
+      <div className={`App theme-${theme}`}>
+        <Sidebar isOpen={isOpen} />
+      </div>
+    </DocumentContextProvider>
   )
 }
 

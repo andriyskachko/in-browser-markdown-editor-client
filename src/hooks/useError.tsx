@@ -2,8 +2,8 @@ import { useState } from 'react'
 
 type TErrorHandler = (err: Error) => void
 
-function useError(): [Error, TErrorHandler] {
-  const [error, setError] = useState<Error>({} as Error)
+function useError(): [Error | undefined, TErrorHandler] {
+  const [error, setError] = useState<Error>()
 
   const handleCatchError = (err: Error) => {
     setError(err)
