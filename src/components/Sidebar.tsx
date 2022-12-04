@@ -1,4 +1,5 @@
 import DocumentsList from '@/components/DocumentsList'
+import ThemeToggler from './ThemeToggler'
 import '@sass/components/Sidebar.scss'
 
 function Sidebar({ isOpen }: { isOpen: boolean }) {
@@ -11,8 +12,10 @@ function Sidebar({ isOpen }: { isOpen: boolean }) {
       >
         + New Document
       </button>
-
       <DocumentsList />
+      <div className="Sidebar__footer">
+        <ThemeToggler />
+      </div>
     </div>
   )
 }
