@@ -17,20 +17,20 @@ const useDocuments = (): [IDocument[], Error | undefined, boolean] => {
         )
         const { data } = response
         setDocuments(documents.concat(data))
+        setIsLoading(false)
       } catch (error) {
         if (error instanceof Error) {
           handleCatchError(error)
+          setIsLoading(false)
         }
-      }
-
-      setIsLoading(false)
-
-      return () => {
-        console.log('Removed')
       }
     }
 
     fetchDocuments()
+
+    return () => {
+      console.log('Removed')
+    }
   }, [page])
 
   return [documents, error, isLoading]

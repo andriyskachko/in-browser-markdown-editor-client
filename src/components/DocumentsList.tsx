@@ -20,7 +20,7 @@ function DocumentsList() {
           />
         )
       })}
-      {isLoading && <h1>Loading..</h1>}
+      {isLoading && <h1>Loading...</h1>}
       {error && <h1>Error</h1>}
     </ul>
   )
