@@ -46,3 +46,25 @@ $burger-menu-button-size: 7.2rem;
     background-image: url('@/assets/images/cross.svg');
   }
 }
+
+.button--delete {
+  background-image: url('@/assets/images/delete.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-size: 2rem;
+  height: 2rem;
+  width: 1.8rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: $outline solid colors.$clr-blue;
+    outline-offset: -$outline;
+  }
+}
