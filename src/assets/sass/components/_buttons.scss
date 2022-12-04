@@ -1,6 +1,9 @@
 @use '@sass/abstracts/colors';
 @use '@sass/base/typography';
 
+$outline: 2px;
+$burger-menu-button-size: 7.2rem;
+
 .button--primary {
   @extend .text-heading-M;
   background-color: colors.$clr-orange;
@@ -16,7 +19,30 @@
   }
 
   &:focus {
-    outline: 2px solid colors.$clr-blue;
-    outline-offset: 2px;
+    outline: $outline solid colors.$clr-blue;
+    outline-offset: $outline;
+  }
+}
+
+.button--burger {
+  background-image: url('@/assets/images/lines.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2.4rem;
+  background-color: colors.$clr-800;
+  outline: none;
+  border: none;
+  width: $burger-menu-button-size;
+  height: $burger-menu-button-size;
+  cursor: pointer;
+  transition: background-image 0.2s ease;
+
+  &:focus {
+    outline: $outline solid colors.$clr-blue;
+    outline-offset: -$outline;
+  }
+
+  &.open {
+    background-image: url('@/assets/images/cross.svg');
   }
 }
